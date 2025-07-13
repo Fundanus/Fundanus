@@ -12,13 +12,25 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(process.cwd(), 'index.html'));
 });
 
-// Middleware para JSON
+// Middleware para JSON e CORS
 app.use(express.json());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Permite qualquer origem
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  next();
+});
 
 // Rota para análise
 app.post('/api/analyze', async (req, res) => {
-  console.log(`Requisição recebida: ${req.method} ${req.url}`);
+  console.log(`Requisição recebida: ${req.method} ${req.url} - Body:`, req.body);
   const { ticker } = req.body;
+  if (!ticker) {
+    return res.status(400).json({ error: 'Ticker não fornecido' });
+  }
   try {
     const alphaKey = process.env.ALPHAVANTAGE_API_KEY;
     const cmcKey = process.env.COINMARKETCAP_API_KEY;
@@ -26,6 +38,7 @@ app.post('/api/analyze', async (req, res) => {
     let url, data;
 
     if (/^[A-Z]{1,5}$/.test(adjustedTicker) && !['BTC', 'ETH', 'XRP', 'SOL', 'ADA'].includes(adjustedTicker)) {
+      console.log(`Usando Alpha Vantage para ${adjustedTicker}`);
       url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${adjustedTicker}&apikey=${alphaKey}`;
       const response = await fetch(url);
       data = await response.json();
@@ -34,6 +47,7 @@ app.post('/api/analyze', async (req, res) => {
       const latestDate = Object.keys(timeSeries)[0];
       var currentPrice = parseFloat(timeSeries[latestDate]['4. close']).toFixed(2);
     } else {
+      console.log(`Usando CoinMarketCap para ${adjustedTicker}`);
       url = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=${adjustedTicker}`;
       const response = await fetch(url, {
         headers: {
@@ -64,6 +78,7 @@ app.post('/api/analyze', async (req, res) => {
       }
     };
 
+    console.log(`Análise gerada para ${adjustedTicker}:`, analysis);
     res.json(analysis);
   } catch (error) {
     console.error('Erro:', error.message);
