@@ -22,30 +22,33 @@
   </div>
 
   <script>
-    document.getElementById('analyzeForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const ticker = document.getElementById('ticker').value;
-      const resultDiv = document.getElementById('result');
+   document.getElementById('analyzeForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const ticker = document.getElementById('ticker').value;
+  const resultDiv = document.getElementById('result');
 
-      try {
-        const response = await fetch('http://fundanus.pt/api/analyze', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ticker })
-        });
-        const data = await response.json();
-        resultDiv.style.display = 'block';
-        resultDiv.innerHTML = `
-          <h2>Análise de ${data.ticker}</h2>
-          <p>Preço Atual: $${data.currentPrice}</p>
-          <p>Alvos: Curto Prazo ($${data.targets.shortTerm}), Médio Prazo ($${data.targets.mediumTerm}), Longo Prazo ($${data.targets.longTerm})</p>
-          <p>Stop-Loss: Curto Prazo ($${data.stopLoss.shortTerm}), Médio Prazo ($${data.stopLoss.mediumTerm}), Longo Prazo ($${data.stopLoss.longTerm})</p>
-        `;
-      } catch (error) {
-        resultDiv.style.display = 'block';
-        resultDiv.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
-      }
+  try {
+    console.log('Enviando requisição para:', 'https://fundanus.pt/api/analyze', 'com ticker:', ticker);
+    const response = await fetch('https://fundanus.pt/api/analyze', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ticker })
     });
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    const data = await response.json();
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = `
+      <h2>Análise de ${data.ticker}</h2>
+      <p>Preço Atual: $${data.currentPrice}</p>
+      <p>Alvos: Curto Prazo ($${data.targets.shortTerm}), Médio Prazo ($${data.targets.mediumTerm}), Longo Prazo ($${data.targets.longTerm})</p>
+      <p>Stop-Loss: Curto Prazo ($${data.stopLoss.shortTerm}), Médio Prazo ($${data.stopLoss.mediumTerm}), Longo Prazo ($${data.stopLoss.longTerm})</p>
+    `;
+  } catch (error) {
+    console.error('Erro no fetch:', error);
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+  }
+});
   </script>
 </body>
 </html>
