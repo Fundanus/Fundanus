@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundanus - Análise de Ativos</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    .result { margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fundanus - Análise de Ativos</h1>
+    <form id="analyzeForm">
+      <label for="ticker">Ticker (ex.: AAPL, BTC):</label>
+      <input type="text" id="ticker" name="ticker" required>
+      <button type="submit">Analisar</button>
+    </form>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    document.getElementById('analyzeForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const ticker = document.getElementById('ticker').value;
+      const resultDiv = document.getElementById('result');
+
+      try {
+        const response = await fetch('http://localhost:3000/api/analyze', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ticker })
+        });
+        const data = await response.json();
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `
+          <h2>Análise de ${data.ticker}</h2>
+          <p>Preço Atual: $${data.currentPrice}</p>
+          <p>Alvos: Curto Prazo ($${data.targets.shortTerm}), Médio Prazo ($${data.targets.mediumTerm}), Longo Prazo ($${data.targets.longTerm})</p>
+          <p>Stop-Loss: Curto Prazo ($${data.stopLoss.shortTerm}), Médio Prazo ($${data.stopLoss.mediumTerm}), Longo Prazo ($${data.stopLoss.longTerm})</p>
+        `;
+      } catch (error) {
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
