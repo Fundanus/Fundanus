@@ -15,151 +15,7 @@
   <title>@Fundanus - Pedro Borges</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      color: #333333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(90deg, #ffffff, #f2f7fa);
-      padding: 20px 10px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-      color: #111111;
-    }
-    header .social-icons {
-      margin-top: 10px;
-    }
-    header .social-icons a {
-      display: inline-block;
-      margin: 0 10px;
-    }
-    header .social-icons img {
-      vertical-align: middle;
-      height: 60px;
-    }
-    header p {
-      margin-top: 15px;
-    }
-    section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .section-grey {
-      background-color: #F9FAFB;
-    }
-    .section-white {
-      background-color: #FFFFFF;
-    }
-    .about-container {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 40px;
-      align-items: flex-start;
-    }
-    .about-photo {
-      flex: 0 0 200px;
-    }
-    .about-photo img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .about-text {
-      flex: 1;
-      max-width: 700px;
-    }
-    .about-text p {
-      margin: 10px 0;
-    }
-    .btn-form, .btn-toggle {
-      background-color: #295C7A;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    .btn-form:hover, .btn-toggle:hover {
-      background-color: #1d3d50;
-      transform: scale(1.05);
-    }
-    .video-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .video-item {
-      flex: 1 1 calc(25% - 20px);
-      max-width: 250px;
-    }
-    .video-item iframe {
-      width: 100%;
-      height: 150px;
-      border: none;
-    }
-    .video-title {
-      font-size: 0.9em;
-      margin-top: 8px;
-      text-align: center;
-      color: #333333;
-    }
-    @media (max-width: 900px) {
-      .video-item {
-        flex: 1 1 calc(50% - 20px);
-      }
-    }
-    @media (max-width: 700px) {
-      .about-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .about-photo {
-        margin-bottom: 20px;
-      }
-      .video-item {
-        flex: 1 1 100%;
-      }
-    }
-    footer {
-      background-color: #f9f9f9;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85em;
-      color: #aaaaaa;
-    }
-    a {
-      text-decoration: none;
-      color: #295C7A;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .frase-final {
-      display: block;
-      margin-top: 10px;
-      font-size: 0.95em;
-      color: #555;
-      font-style: italic;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -167,14 +23,15 @@
   <h1>@Fundanus</h1>
   <div class="social-icons">
     <a href="https://www.tiktok.com/@fundanus" target="_blank" rel="noopener noreferrer">
-      <img src="images/logo-tiktok.png" alt="TikTok" alt="TikTok">
+      <img src="images/logo-tiktok.png" alt="TikTok">
     </a>
     <a href="https://www.linkedin.com/in/pedro-borges-asb/" target="_blank" rel="noopener noreferrer">
-      <img src= alt="LinkedIn">
+      <img src="images/logo-linkedin.png" alt="LinkedIn">
     </a>
   </div>
   <p>Investe com inteligência. Vive com liberdade.</p>
 </header>
+
 <!-- SOBRE MIM -->
 <section class="section-white">
   <h2>👋 Sobre Mim</h2>
@@ -188,94 +45,42 @@
         <p>🎓 Licenciado em Gestão pelo ISEG e com uma pós-graduação em Mercados e Ativos Financeiros pelo ISCTE, a minha carreira tem estado sempre ligada aos mercados financeiros, fintech, trading e ao fascinante universo das criptomoedas.</p>
       </div>
       <div class="full-text" style="display: none;">
-        <p>💼 Tenho mais de 25 anos de experiência internacional, em funções de liderança em bancos, corretoras online e startups em cinco países 🇵🇹🇩🇰🏴🇪🇸🇧🇷 e dois hemisférios. Fui responsável por lançar plataformas como a Gobulling Pro na LJ Carregosa, desenvolver o negócio de brokerage online na Orey Financial e criei as primeiras parcerias white-label globais para o Saxo Bank.</p>
-        <p>🚗 Em 2015, fundei a Carlicity no Brasil, uma empresa inovadora que transformou automóveis em plataformas publicitárias, ajudando condutores a gerar rendimento extra — chegámos a ter mais de 100 mil motoristas e quase mil milhões de rotas registadas antes de vender o negócio.</p>
-        <p>🚀 Hoje, estou focado em criar negócios digitais de baixo custo e alta escalabilidade, onde a Inteligência Artificial é o motor principal. Gosto de modelos online que democratizam o acesso a ferramentas financeiras e que permitem aos utilizadores tomar melhores decisões sem custos proibitivos.</p>
-        <p>🪙 Sou fundador do Mercado Bitcoin Portugal, a primeira corretora de criptomoedas registada no Banco de Portugal, e mantenho uma forte presença online, especialmente no TikTok, onde partilho insights sobre investimentos, mercados e estratégias para colocar o dinheiro a trabalhar por nós.</p>
-        <p>🔥 Sou motivado, inovador e adoro resolver problemas com abordagens práticas, sempre com o objetivo de melhorar a rentabilidade, a satisfação dos clientes e o ambiente de trabalho. Sou também um marketeer de coração — online, offline, digital… qualquer tipo de marketing me entusiasma, mesmo que às vezes a paixão supere o conhecimento.</p>
-        <p>🎯 No fundo, o meu propósito é sempre o mesmo: <strong>ajudar as pessoas a investirem melhor, protegerem o seu dinheiro e viverem com mais liberdade.</strong></p>
+        <p>💼 Tenho mais de 25 anos de experiência internacional, em funções de liderança em bancos, corretoras online e startups em cinco países 🇵🇹🇩🇰🏴🇪🇸🇧🇷 e dois hemisférios.</p>
+        <p>🚗 Em 2015, fundei a Carlicity no Brasil, transformando automóveis em plataformas publicitárias, antes de vender o negócio.</p>
+        <p>🚀 Hoje foco-me em negócios digitais de baixo custo e alta escalabilidade, onde a IA é o motor principal.</p>
+        <p>🪙 Sou fundador do Mercado Bitcoin Portugal, primeira corretora cripto registada no Banco de Portugal.</p>
+        <p>🔥 Sou marketeer de coração — online, offline, digital… qualquer marketing me entusiasma.</p>
+        <p>🎯 O meu propósito: <strong>ajudar as pessoas a investirem melhor, protegerem o seu dinheiro e viverem com mais liberdade.</strong></p>
       </div>
       <button id="toggle-about" class="btn-toggle">Ler mais</button>
     </div>
   </div>
 </section>
 
-<!-- SECÇÃO DO TICKER (INTEGRADA COM O NOSSO FORMULÁRIO) -->
+<!-- SECÇÃO DO TICKER -->
 <section class="section-white" id="ticker-section" style="text-align: center; padding: 60px 20px;">
   <h2>📊 Queres saber o que penso do teu ativo favorito?</h2>
-  <p>Escreve o ticker do ativo (ex.: AAPL, BTC, GALP) e gera já um relatório técnico exclusivo Fundanus.</p>
-<form id="analyzeForm">
-  <label for="ticker">Escolhe o ativo:</label>
-  <select id="ticker" name="ticker" style="padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px;" required>
-    <option value="">Escolhe um ativo</option>
-    <optgroup label="Ações">
-      <option value="AAPL">AAPL (Apple)</option>
-      <option value="GOOG">GOOG (Google)</option>
-      <option value="MSFT">MSFT (Microsoft)</option>
-      <option value="TSLA">TSLA (Tesla)</option>
-      <option value="AMZN">AMZN (Amazon)</option>
-      <option value="GALP">GALP (Galp Energia)</option>
-    </optgroup>
-    <optgroup label="Criptomoedas">
-      <option value="BTC">BTC (Bitcoin)</option>
-      <option value="ETH">ETH (Ethereum)</option>
-      <option value="XRP">XRP (Ripple)</option>
-      <option value="SOL">SOL (Solana)</option>
-      <option value="ADA">ADA (Cardano)</option>
-    </optgroup>
-  </select>
-  <button type="submit" class="btn-form" style="margin-top: 20px;">Gerar Relatório</button>
-</form>
-<div id="result" style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></div>
-<script>
-  document.getElementById('analyzeForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const ticker = document.getElementById('ticker').value;
-    const resultDiv = document.getElementById('result');
+  <p>Escolhe o tipo de ativo e começa a escrever o nome ou ticker (ex.: AAPL para Apple, BTC para Bitcoin).</p>
 
-    resultDiv.style.display = 'block';
-    resultDiv.innerHTML = `<p style="color: gray; font-style: italic;">A obter relatório...</p>`; // Loading simples
-
-    try {
-      console.log('Enviando requisição para:', 'https://fundanus.pt/api/analyze', 'com ticker:', ticker);
-      const response = await fetch('https://fundanus.pt/api/analyze', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ticker })
-      });
-      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-      const data = await response.json();
-      let trend = '';
-      let trendColor = '';
-      if (parseFloat(data.targets.shortTerm) > parseFloat(data.currentPrice)) {
-        trend = 'Comprar';
-        trendColor = 'green';
-      } else if (parseFloat(data.targets.shortTerm) < parseFloat(data.currentPrice)) {
-        trend = 'Vender';
-        trendColor = 'red';
-      } else {
-        trend = 'Neutro';
-        trendColor = 'gray';
-      }
-      resultDiv.innerHTML = `
-        <h2>Análise de ${data.ticker}</h2>
-        <p>Tendência: <span style="color: ${trendColor}; font-weight: bold;">${trend}</span></p>
-        <p>Preço Atual: $${data.currentPrice}</p>
-        <p>Alvos: Curto Prazo ($${data.targets.shortTerm}), Médio Prazo ($${data.targets.mediumTerm}), Longo Prazo ($${data.targets.longTerm})</p>
-        <p>Stop-Loss: Curto Prazo ($${data.stopLoss.shortTerm}), Médio Prazo ($${data.stopLoss.mediumTerm}), Longo Prazo ($${data.stopLoss.longTerm})</p>
-      `;
-    } catch (error) {
-      console.error('Erro no fetch:', error);
-      resultDiv.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
-    }
-  });
-</script>
+  <form id="analyzeForm">
+    <label for="asset-type">Tipo de ativo:</label>
+    <select id="asset-type" style="padding: 10px; width: 250px; margin-top: 10px;">
+      <option value="stocks">Ações (Nasdaq100)</option>
+      <option value="crypto">Criptomoedas (Top 100)</option>
+    </select>
+    <br/>
+    <input id="ticker-search" placeholder="Pesquisa aqui..." style="padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px;" autocomplete="off" required>
+    <div id="autocomplete-results" style="border: 1px solid #ccc; border-radius: 4px; display:none; max-height:200px; overflow-y:auto; background:white; width:250px; margin:auto; text-align:left;"></div>
+    <br/>
+    <button type="submit" class="btn-form" style="margin-top: 20px;">Gerar Relatório</button>
+  </form>
+  <div id="result" style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></div>
 </section>
 
 <!-- PORQUÊ FUNDANUS -->
 <section class="section-grey">
   <h2>🍷 Porquê Fundanus?</h2>
-  <p>O nome Fundanus nasceu da minha terra natal, o Fundão, de onde sou natural e profundamente bairrista. Alguns anos atrás, a Adega Cooperativa do Fundão lançou um vinho especial chamado Fundanus — uma edição limitada fantástica. A partir daí, Fundanus tornou-se o meu nickname e username nas redes sociais, como homenagem à minha terra e claro àquele vinho que nunca esqueci.</p>
+  <p>O nome Fundanus nasceu da minha terra natal, o Fundão, de onde sou natural e profundamente bairrista. Alguns anos atrás, a Adega Cooperativa do Fundão lançou um vinho especial chamado Fundanus — uma edição limitada fantástica. A partir daí, Fundanus tornou-se o meu nickname e username nas redes sociais.</p>
 </section>
 
 <!-- QUIZ -->
@@ -287,7 +92,7 @@
 <!-- VÍDEOS E ENTREVISTAS -->
 <section class="section-white">
   <h2>🎥 Vídeos e Entrevistas</h2>
-  
+
   <h3>🎬 Vídeos</h3>
   <div class="video-grid">
     <div class="video-item">
@@ -320,46 +125,64 @@
     <li><a href="https://www.forbespt.com/100-ideias-para-portugal-a-opiniao-de-pedro-borges-ceo-e-cofundador-da-mercado-bitcoin-portugal/" target="_blank">📰 Forbes Portugal</a></li>
   </ul>
 </section>
+
 <footer>
   © 2025 Pedro Borges | Fundanus
 </footer>
 
-<!-- MODAL LOGIN -->
-<div id="modal-login" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
-  <div style="background: #fff; padding: 40px; max-width: 500px; width: 90%; border-radius: 8px; text-align: center; position: relative;">
-    <span style="position: absolute; top: 10px; right: 20px; font-size: 20px; cursor: pointer; color: #aaa;" onclick="fecharModalLogin()">×</span>
-    <h2 style="color: #295C7A;">🚀 O teu relatório está pronto!</h2>
+<!-- Modais -->
+<div id="modal-login" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModalLogin()">&times;</span>
+    <h2>🚀 O teu relatório está pronto!</h2>
     <p>Para leres, cria a tua conta Fundanus grátis:</p>
-    <input type="text" placeholder="Nome" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-    <input type="email" placeholder="Email" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-    <input type="tel" placeholder="Telemóvel (opcional)" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-    <input type="password" placeholder="Password" style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px;">
-    <button class="btn-form" style="width: 100%; margin-bottom: 15px;">Criar Conta</button>
+    <input type="text" placeholder="Nome">
+    <input type="email" placeholder="Email">
+    <input type="tel" placeholder="Telemóvel (opcional)">
+    <input type="password" placeholder="Password">
+    <button class="btn-form" onclick="abrirModalOTP()">Criar Conta</button>
     <p>ou entra com:</p>
-    <button class="btn-form" style="background-color: #DB4437; width: 100%; margin-bottom: 10px;">🔗 Login com Google</button>
-    <button class="btn-form" style="background-color: #0077B5; width: 100%;">🔗 Login com LinkedIn</button>
+    <button class="btn-form" style="background-color: #DB4437;">🔗 Login com Google</button>
+    <button class="btn-form" style="background-color: #0077B5;">🔗 Login com LinkedIn</button>
   </div>
 </div>
-<!-- MODAL OTP -->
-<div id="modal-otp" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-     background: rgba(0,0,0,0.5); z-index: 10000; justify-content: center; align-items: center;">
-  <div style="background: #fff; padding: 40px; max-width: 400px; width: 90%; border-radius: 8px; text-align: center; position: relative;">
-    <span style="position: absolute; top: 10px; right: 20px; font-size: 20px; cursor: pointer; color: #aaa;" onclick="fecharModalOTP()">×</span>
-    <h2 style="color: #295C7A;">🚀 Quase lá!</h2>
+
+<div id="modal-otp" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModalOTP()">&times;</span>
+    <h2>🚀 Quase lá!</h2>
     <p>Enviámos um código de 6 dígitos para o teu email.</p>
-    <input type="text" id="otp-input" placeholder="Introduz o código" maxlength="6" style="width: 100%; padding: 12px; margin-top: 20px; border: 1px solid #ccc; border-radius: 4px;">
-    <button class="btn-form" style="width: 100%; margin-top: 20px;" onclick="validarOTP()">Validar Código</button>
+    <input type="text" id="otp-input" placeholder="Introduz o código" maxlength="6">
+    <button class="btn-form" onclick="validarOTP()">Validar Código</button>
   </div>
 </div>
 
 <script>
   function abrirModalLogin() {
-    document.getElementById("modal-login").style.display = "flex";
+    document.getElementById("modal-login").style.display = "block";
   }
   function fecharModalLogin() {
     document.getElementById("modal-login").style.display = "none";
   }
+  function abrirModalOTP() {
+    document.getElementById("modal-otp").style.display = "block";
+  }
+  function fecharModalOTP() {
+    document.getElementById("modal-otp").style.display = "none";
+  }
+  function validarOTP() {
+    var otp = document.getElementById("otp-input").value.trim();
+    if (otp.length === 6) {
+      alert("✅ Código validado com sucesso! (Simulação)");
+      fecharModalOTP();
+      window.location.href = "report.html";
+    } else {
+      alert("⚠️ O código deve ter 6 dígitos!");
+    }
+  }
+</script>
 
+<script>
   document.getElementById("toggle-about").addEventListener("click", function() {
     var fullText = document.querySelector(".full-text");
     if (fullText.style.display === "none") {
@@ -384,26 +207,6 @@
     {
       question: "O que pensas sobre cripto?",
       options: ["Nem pensar.", "Talvez com pouco dinheiro.", "Quero investir já.", "Sou maximalista!"]
-    },
-    {
-      question: "O que fazes com séries da Netflix?",
-      options: ["Vejo as mesmas.", "Exploro devagar.", "Vejo tudo o que for novidade.", "Só vejo séries indie obscuras."]
-    },
-    {
-      question: "Ao comprar roupa, preferes...",
-      options: ["Básicos seguros.", "Algum detalhe diferente.", "Peças arrojadas.", "Estilos extravagantes!"]
-    },
-    {
-      question: "Qual o teu tema preferido no TikTok?",
-      options: ["Receitas caseiras.", "Tecnologia moderada.", "Investimentos arriscados.", "Cripto memes."]
-    },
-    {
-      question: "Se te derem €5000 extra...",
-      options: ["Guardo tudo.", "Invisto metade.", "Arrisco tudo.", "Invisto num projeto esquisito!"]
-    },
-    {
-      question: "Como defines o risco?",
-      options: ["Evitar sempre.", "Aceitar um pouco.", "Buscar retorno alto.", "Viver perigosamente!"]
     }
   ];
 
@@ -412,17 +215,16 @@
 
   function showQuestion() {
     const q = questions[currentQuestion];
-    const container = document.getElementById("quiz-container");
-    let html = `<div class="quiz-question" style="font-weight:bold;margin-bottom:10px;">${q.question}</div><div class="quiz-options">`;
+    let html = `<div class="quiz-question" style="font-weight:bold;margin-bottom:10px;">${q.question}</div>`;
     q.options.forEach((opt, idx) => {
-      html += `<label style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="q${currentQuestion}" value="${idx}"> ${opt}</label>`;
+      html += `<label style="display:block;margin-bottom:5px;"><input type="radio" name="q${currentQuestion}" value="${idx}"> ${opt}</label>`;
     });
-    html += `</div><div class="quiz-navigation" style="margin-top:20px;">`;
+    html += `<div style="margin-top:10px;">`;
     if (currentQuestion > 0) {
-      html += `<button onclick="prevQuestion()">Anterior</button>`;
+      html += `<button onclick="prevQuestion()">Anterior</button> `;
     }
     html += `<button onclick="nextQuestion()">Seguinte</button></div>`;
-    container.innerHTML = html;
+    document.getElementById("quiz-container").innerHTML = html;
   }
 
   function nextQuestion() {
@@ -454,57 +256,82 @@
       else crazy++;
     });
     let profile = "";
-    if (conservative >= 5) {
-      profile = "😌 Tens um perfil super conservador. Segurança acima de tudo. És capaz de rever a mesma série na Netflix só para não arriscar!";
-    } else if (moderate >= 5) {
-      profile = "⚖️ Tens um perfil moderado. Gostas de algum risco, mas controlado. E ainda há espaço para umas novidades na Netflix!";
-    } else if (aggressive >= 5) {
-      profile = "🚀 Tens um perfil arrojado. Procuras sempre grandes oportunidades e não tens medo de arriscar.";
+    if (conservative >= 2) {
+      profile = "😌 Tens um perfil conservador.";
+    } else if (moderate >= 2) {
+      profile = "⚖️ Tens um perfil moderado.";
+    } else if (aggressive >= 2) {
+      profile = "🚀 Tens um perfil agressivo.";
     } else {
-      profile = "🤪 És completamente imprevisível! Investes em coisas que ninguém conhece e provavelmente tens playlists estranhas no Spotify!";
+      profile = "🤪 És completamente imprevisível!";
     }
-    document.getElementById("quiz-container").innerHTML =
-      `<div class="quiz-result" style="margin-top:30px; font-weight:bold; font-size:1.2em; color:#295C7A;">${profile}</div>`;
+    document.getElementById("quiz-container").innerHTML = `<p style="color:#295C7A; font-weight:bold;">${profile}</p>`;
   }
 
   showQuestion();
 </script>
+
 <script>
-  function abrirModalOTP() {
-    document.getElementById("modal-otp").style.display = "flex";
-  }
+  // AUTOCOMPLETE LOGIC
+  const input = document.getElementById("ticker-search");
+  const resultsBox = document.getElementById("autocomplete-results");
 
-  function fecharModalOTP() {
-    document.getElementById("modal-otp").style.display = "none";
-  }
+  input.addEventListener("input", async () => {
+    const query = input.value.trim();
+    const type = document.getElementById("asset-type").value;
 
-  function validarOTP() {
-    var otp = document.getElementById("otp-input").value.trim();
-    if (otp.length === 6) {
-      alert("✅ Código validado com sucesso! (Simulação)");
-      fecharModalOTP();
-      window.location.href = "report.html";
-    } else {
-      alert("⚠️ O código deve ter 6 dígitos!");
+    if (!query || query.length < 2) {
+      resultsBox.style.display = "none";
+      return;
     }
-  }
 
-  // Liga Modal Login → Modal OTP
-  document.querySelector("#modal-login button.btn-form").addEventListener("click", function(){
-    fecharModalLogin();
-    abrirModalOTP();
+    const res = await fetch(`/api/search?q=${query}&type=${type}`);
+    const data = await res.json();
+
+    resultsBox.innerHTML = "";
+    if (data.length === 0) {
+      resultsBox.style.display = "none";
+      return;
+    }
+    data.forEach(item => {
+      const div = document.createElement("div");
+      div.style.padding = "8px";
+      div.style.cursor = "pointer";
+      div.textContent = `${item.symbol} (${item.name})`;
+      div.addEventListener("click", () => {
+        input.value = item.symbol;
+        resultsBox.style.display = "none";
+      });
+      resultsBox.appendChild(div);
+    });
+    resultsBox.style.display = "block";
   });
-</script>
-<script>
-  function guardarTickerEabrirLogin() {
-    const ticker = document.getElementById("ticker").value.trim().toUpperCase();
-    if (ticker) {
-      localStorage.setItem("fundanusTicker", ticker);
-      abrirModalLogin();
-    } else {
-      alert("⚠️ Introduz um ticker válido!");
+
+  document.getElementById("analyzeForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const ticker = document.getElementById("ticker-search").value.split(" ")[0];
+    const resultDiv = document.getElementById("result");
+    resultDiv.style.display = "block";
+    resultDiv.innerHTML = `<p style="color: gray;">A obter relatório...</p>`;
+    try {
+      const response = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ticker })
+      });
+      const data = await response.json();
+      resultDiv.innerHTML = `
+        <h3>Análise de ${data.ticker}</h3>
+        <p>Preço Atual: $${data.currentPrice}</p>
+        <p>Curto prazo: $${data.targets.shortTerm}</p>
+        <p>Médio prazo: $${data.targets.mediumTerm}</p>
+        <p>Longo prazo: $${data.targets.longTerm}</p>
+        <p>Stop-Loss curto prazo: $${data.stopLoss.shortTerm}</p>
+      `;
+    } catch (error) {
+      resultDiv.innerHTML = `<p style="color:red;">Erro: ${error.message}</p>`;
     }
-  }
+  });
 </script>
 
 </body>
