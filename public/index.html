@@ -170,7 +170,7 @@
       <img src="images/logo-tiktok.png" alt="TikTok" alt="TikTok">
     </a>
     <a href="https://www.linkedin.com/in/pedro-borges-asb/" target="_blank" rel="noopener noreferrer">
-      <img src="images/logo-linkedin.png" alt="LinkedIn" alt="LinkedIn">
+      <img src= alt="LinkedIn">
     </a>
   </div>
   <p>Investe com inteligência. Vive com liberdade.</p>
@@ -204,41 +204,72 @@
 <section class="section-white" id="ticker-section" style="text-align: center; padding: 60px 20px;">
   <h2>📊 Queres saber o que penso do teu ativo favorito?</h2>
   <p>Escreve o ticker do ativo (ex.: AAPL, BTC, GALP) e gera já um relatório técnico exclusivo Fundanus.</p>
-  <form id="analyzeForm">
-    <input type="text" id="ticker" name="ticker" placeholder="Ticker (ex.: AAPL)" style="padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px;" required>
-    <br>
-    <button type="submit" class="btn-form" style="margin-top: 20px;">Gerar Relatório</button>
-  </form>
-  <div id="result" style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></div>
-  <script>
-    document.getElementById('analyzeForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const ticker = document.getElementById('ticker').value;
-      const resultDiv = document.getElementById('result');
+<form id="analyzeForm">
+  <label for="ticker">Escolhe o ativo:</label>
+  <select id="ticker" name="ticker" style="padding: 10px; width: 250px; border: 1px solid #ccc; border-radius: 4px; margin-top: 10px;" required>
+    <option value="">Escolhe um ativo</option>
+    <optgroup label="Ações">
+      <option value="AAPL">AAPL (Apple)</option>
+      <option value="GOOG">GOOG (Google)</option>
+      <option value="MSFT">MSFT (Microsoft)</option>
+      <option value="TSLA">TSLA (Tesla)</option>
+      <option value="AMZN">AMZN (Amazon)</option>
+      <option value="GALP">GALP (Galp Energia)</option>
+    </optgroup>
+    <optgroup label="Criptomoedas">
+      <option value="BTC">BTC (Bitcoin)</option>
+      <option value="ETH">ETH (Ethereum)</option>
+      <option value="XRP">XRP (Ripple)</option>
+      <option value="SOL">SOL (Solana)</option>
+      <option value="ADA">ADA (Cardano)</option>
+    </optgroup>
+  </select>
+  <button type="submit" class="btn-form" style="margin-top: 20px;">Gerar Relatório</button>
+</form>
+<div id="result" style="display: none; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></div>
+<script>
+  document.getElementById('analyzeForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const ticker = document.getElementById('ticker').value;
+    const resultDiv = document.getElementById('result');
 
-      try {
-        console.log('Enviando requisição para:', 'https://fundanus.pt/api/analyze', 'com ticker:', ticker);
-        const response = await fetch('https://fundanus.pt/api/analyze', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ticker })
-        });
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        const data = await response.json();
-        resultDiv.style.display = 'block';
-        resultDiv.innerHTML = `
-          <h2>Análise de ${data.ticker}</h2>
-          <p>Preço Atual: $${data.currentPrice}</p>
-          <p>Alvos: Curto Prazo ($${data.targets.shortTerm}), Médio Prazo ($${data.targets.mediumTerm}), Longo Prazo ($${data.targets.longTerm})</p>
-          <p>Stop-Loss: Curto Prazo ($${data.stopLoss.shortTerm}), Médio Prazo ($${data.stopLoss.mediumTerm}), Longo Prazo ($${data.stopLoss.longTerm})</p>
-        `;
-      } catch (error) {
-        console.error('Erro no fetch:', error);
-        resultDiv.style.display = 'block';
-        resultDiv.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = `<p style="color: gray; font-style: italic;">A obter relatório...</p>`; // Loading simples
+
+    try {
+      console.log('Enviando requisição para:', 'https://fundanus.pt/api/analyze', 'com ticker:', ticker);
+      const response = await fetch('https://fundanus.pt/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ticker })
+      });
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+      const data = await response.json();
+      let trend = '';
+      let trendColor = '';
+      if (parseFloat(data.targets.shortTerm) > parseFloat(data.currentPrice)) {
+        trend = 'Comprar';
+        trendColor = 'green';
+      } else if (parseFloat(data.targets.shortTerm) < parseFloat(data.currentPrice)) {
+        trend = 'Vender';
+        trendColor = 'red';
+      } else {
+        trend = 'Neutro';
+        trendColor = 'gray';
       }
-    });
-  </script>
+      resultDiv.innerHTML = `
+        <h2>Análise de ${data.ticker}</h2>
+        <p>Tendência: <span style="color: ${trendColor}; font-weight: bold;">${trend}</span></p>
+        <p>Preço Atual: $${data.currentPrice}</p>
+        <p>Alvos: Curto Prazo ($${data.targets.shortTerm}), Médio Prazo ($${data.targets.mediumTerm}), Longo Prazo ($${data.targets.longTerm})</p>
+        <p>Stop-Loss: Curto Prazo ($${data.stopLoss.shortTerm}), Médio Prazo ($${data.stopLoss.mediumTerm}), Longo Prazo ($${data.stopLoss.longTerm})</p>
+      `;
+    } catch (error) {
+      console.error('Erro no fetch:', error);
+      resultDiv.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>`;
+    }
+  });
+</script>
 </section>
 
 <!-- PORQUÊ FUNDANUS -->

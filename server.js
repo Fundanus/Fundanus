@@ -63,9 +63,23 @@ app.post('/api/analyze', async (req, res) => {
     }
 
     const priceBase = parseFloat(currentPrice);
-    const analysis = {
-      ticker: adjustedTicker,
-      currentPrice,
+let trendFactor = Math.random() > 0.7 ? 0.95 : 1.05; // 30% chance de bearish (targets < current), 70% bullish
+const analysis = {
+  ticker: adjustedTicker,
+  currentPrice,
+  targets: {
+    shortTerm: (priceBase * trendFactor).toFixed(2),
+    mediumTerm: (priceBase * trendFactor * 1.05).toFixed(2),
+    longTerm: (priceBase * trendFactor * 1.15).toFixed(2)
+  },
+  stopLoss: {
+    shortTerm: (priceBase * 0.95).toFixed(2),
+    mediumTerm: (priceBase * 0.90).toFixed(2),
+    longTerm: (priceBase * 0.85).toFixed(2)
+  }
+};
+console.log(`Análise gerada para ${adjustedTicker}:`, analysis);
+res.json(analysis);
       targets: {
         shortTerm: (priceBase * 1.05).toFixed(2),
         mediumTerm: (priceBase * 1.10).toFixed(2),
