@@ -62,7 +62,7 @@ app.post('/api/analyze', async (req, res) => {
       var currentPrice = parseFloat(cryptoData.quote.USD.price).toFixed(2);
     }
 
-    const priceBase = parseFloat(currentPrice);
+const priceBase = parseFloat(currentPrice);
 let trendFactor = Math.random() > 0.7 ? 0.95 : 1.05; // 30% chance de bearish (targets < current), 70% bullish
 const analysis = {
   ticker: adjustedTicker,
@@ -78,19 +78,9 @@ const analysis = {
     longTerm: (priceBase * 0.85).toFixed(2)
   }
 };
+
 console.log(`Análise gerada para ${adjustedTicker}:`, analysis);
 res.json(analysis);
-      targets: {
-        shortTerm: (priceBase * 1.05).toFixed(2),
-        mediumTerm: (priceBase * 1.10).toFixed(2),
-        longTerm: (priceBase * 1.20).toFixed(2)
-      },
-      stopLoss: {
-        shortTerm: (priceBase * 0.95).toFixed(2),
-        mediumTerm: (priceBase * 0.90).toFixed(2),
-        longTerm: (priceBase * 0.85).toFixed(2)
-      }
-    };
 
     console.log(`Análise gerada para ${adjustedTicker}:`, analysis);
     res.json(analysis);
