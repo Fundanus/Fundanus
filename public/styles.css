@@ -350,3 +350,42 @@ footer {
 .btn-form:hover {
   background-color: #1d3e55;
 }
+#result {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+}
+
+#result h2 {
+  color: #295C7A;
+  margin-top: 0;
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: center;
+}
+
+#result p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+#result ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+#result ul li {
+  background: #F9FAFB;
+  margin-bottom: 8px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #295C7A;
+  font-weight: 500;
+}
