@@ -1,17 +1,20 @@
 {
   "name": "fundanus-backend",
   "version": "1.0.0",
+  "description": "Fundanus - Análise de investimentos com IA",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
+  "author": "Pedro Borges",
+  "license": "ISC",
   "dependencies": {
     "dotenv": "^17.2.0",
     "express": "^4.21.1"
   },
-  "keywords": [],
-  "author": "Pedro Borges",
-  "license": "ISC",
-  "description": "Fundanus - Análise de investimentos com IA"
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
 }
