@@ -24,3 +24,5 @@ pids
 
 # Sistema operativo (opcional)
 Thumbs.db
+.env
+.env
