@@ -71,7 +71,7 @@ app.post('/api/analyze', async (req, res) => {
       };
 
       const priceBase = parseFloat(currentPrice);
-      let trendFactor = Math.random() > 0.7 ? 0.95 : 1.05;
+      const trendFactor = Math.random() > 0.7 ? 0.95 : 1.05;
 
       analysis = {
         ticker: adjustedTicker,
@@ -121,7 +121,7 @@ app.post('/api/analyze', async (req, res) => {
       }
 
       const priceBase = parseFloat(currentPrice);
-      let trendFactor = Math.random() > 0.7 ? 0.95 : 1.05;
+      const trendFactor = Math.random() > 0.7 ? 0.95 : 1.05;
 
       analysis = {
         ticker: adjustedTicker,
@@ -201,7 +201,7 @@ app.get('/api/search', async (req, res) => {
       const alphaKey = process.env.ALPHAVANTAGE_API_KEY;
       const url = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${alphaKey}`;
       const response = await fetch(url);
-      const data = await res.json();
+      const data = await response.json(); // ← corrigido aqui!
       const results = (data.bestMatches || []).map((item) => ({
         symbol: item["1. symbol"],
         name: item["2. name"],
