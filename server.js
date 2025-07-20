@@ -6,7 +6,7 @@ import path from 'path';
 import fs from 'fs/promises';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 // Serve ficheiros estáticos
 app.use(express.static(path.join(process.cwd(), 'public')));
